@@ -16,6 +16,7 @@ const server = express()
     res.render('/client/index.html', {
         puerto: PORT
     })
+  })
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 var io = require('socket.io')(server);
