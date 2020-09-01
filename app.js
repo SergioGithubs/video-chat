@@ -29,9 +29,3 @@ io.on('connection', function(socket){
 		io.sockets.emit("user-left", socket.id);
 	})
 });
-
-// app.listen(3000, function(){
-// 	console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
-// });
-
-server.listen(port, () => console.log(`Server is running on port ${port}`));
