@@ -37,7 +37,7 @@ function pageReady() {
 
                 // socket = io.connect(config.host, {secure: true});
                 // socket = io.connect('localhost:4000', {secure: true});
-                socket = io.connect('localhost:4000', {'transports': ['websocket']});
+                socket = io.connect('sergio-video-chat.herokuapp.com:'+process.env.PORT, {'transports': ['websocket']});
                 // socket = io.connect(window.location.origin, {secure: true});
                 socket.on('signal', gotMessageFromServer);    
 
