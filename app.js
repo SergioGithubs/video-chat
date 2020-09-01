@@ -14,7 +14,7 @@ const port = process.env.PORT || 4000;
 
 var io = require('socket.io')(server);
 
-app.use(express.static(__dirname + "/client"));
+app.use("/cliente", express.static(__dirname + "/client"));
 
 io.on('connection', function(socket){
 	io.sockets.emit("user-joined", socket.id, io.engine.clientsCount, Object.keys(io.sockets.clients().sockets));
