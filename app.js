@@ -1,7 +1,7 @@
 
 // https://github.com/kolson25/WebRTC-Multi-Peer-Video-Audio
 
-// var express = require('express')
+var express = require('express')
 //   , routes = require('./routes');
 
 // var app = module.exports = express.createServer();
