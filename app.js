@@ -12,7 +12,7 @@ const server = express()
   // .use("main.css", (req, res) => res.sendFile('/client/main.css', { root: __dirname }))
   // .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
   .use(express.static('client'))
-  .get('/', function(req, res) {
+  .use('/', function(req, res) {
     res.render('/client/index.html', {
         puerto: PORT
     })
