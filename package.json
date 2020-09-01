@@ -10,5 +10,8 @@
   "devDependencies": {
     "http": "0.0.0",
     "socket.io": "^1.7.3"
+  },
+  "scripts": {
+    "start": "node app.js"   
   }
 }
