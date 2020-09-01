@@ -5,16 +5,12 @@
 //   , routes = require('./routes');
 
 // var app = module.exports = express.createServer();
-var express = require('express');
-var app = express();
-var server = require('http').createServer(app);
+const PORT = process.env.PORT || 3000;
+const INDEX = '/client/index.html';
 
-// const port = 4000;
-const port = process.env.PORT || 4000;
-
-var io = require('socket.io')(server);
-
-app.use("/cliente", express.static(__dirname + "/client"));
+const server = express()
+  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
+  .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 io.on('connection', function(socket){
 	io.sockets.emit("user-joined", socket.id, io.engine.clientsCount, Object.keys(io.sockets.clients().sockets));
