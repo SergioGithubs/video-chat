@@ -12,6 +12,8 @@ const server = express()
   .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
+var io = require('socket.io')(server);
+
 io.on('connection', function(socket){
 	io.sockets.emit("user-joined", socket.id, io.engine.clientsCount, Object.keys(io.sockets.clients().sockets));
 
