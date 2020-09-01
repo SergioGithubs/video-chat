@@ -121,9 +121,9 @@ function getUserMediaSuccess(stream) {
 
     //https://stackoverflow.com/questions/27420581/get-maximum-video-resolution-with-getusermedia
     constrs = stream.getVideoTracks()[0].getConstraints();
-    constrs.frameRate = 1;
+    constrs.frameRate = 5;
     // constrs.frameRate = { min: 3, ideal: 20, max: 30 };
-    constrs.width = 50;
+    constrs.width = 100;
     // constrs.width = { min: 100, ideal: 400, max: 900 };
     stream.getVideoTracks()[0].applyConstraints(constrs);
 
