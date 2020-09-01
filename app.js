@@ -11,7 +11,7 @@ const INDEX = '/client/index.html';
 const server = express()
   // .use("main.css", (req, res) => res.sendFile('/client/main.css', { root: __dirname }))
   // .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
-  .use(express.static('client'));
+  .use(express.static('client'))
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 var io = require('socket.io')(server);
