@@ -11,12 +11,14 @@ const INDEX = '/client/index.html';
 const server = express()
   // .use("main.css", (req, res) => res.sendFile('/client/main.css', { root: __dirname }))
   // .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
-  .use(express.static('client'))
-  .use('/', function(req, res) {
-    res.render('/client/index.html', {
+  .engine('html', require('ejs').renderFile)
+  .set('views', __dirname + '/client')
+  .get('/', function(req, res) {
+    res.render('index.html', {
         puerto: PORT
     })
   })
+  .use(express.static('client'))
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 var io = require('socket.io')(server);

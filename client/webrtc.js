@@ -13,7 +13,7 @@ var peerConnectionConfig = {
         {'urls': 'stun:stun.l.google.com:19302'},
     ]
 };
-console.log('Puerto: ' + puerto)
+
 function pageReady() {
 
     localVideo = document.getElementById('localVideo');
