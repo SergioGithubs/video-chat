@@ -6,6 +6,7 @@ var express = require('express')
 
 // var app = module.exports = express.createServer();
 const PORT = process.env.PORT || 3000;
+const PORT2 = process.env.PORT || 4000;
 const INDEX = '/client/index.html';
 
 const server = express()
@@ -19,7 +20,7 @@ const server = express()
     })
   })
   .use(express.static('client'))
-  .listen(PORT, () => console.log(`Listening on ${PORT}`));
+  .listen(PORT, () => console.log(`Listening on ${PORT} y WS por ${PORT2}`));
 
 var io = require('socket.io')(server);
 
