@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3000;
 const INDEX = '/client/index.html';
 
 const server = express()
+  .use("main.css", (req, res) => res.sendFile('/client/main.css', { root: __dirname }))
   .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
